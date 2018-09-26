@@ -3,6 +3,7 @@
     background-color: #70cab3;
     border-radius: 0;
     border: 0;
+    height: 70px;
 }
 #logo-img{
     background: url('../../assets/images/Feastmate_logo.PNG') no-repeat;
@@ -45,11 +46,11 @@
 #cover-img{
     background: url('../../assets/images/restaurant-image.jpg') no-repeat;
     width: 100%;
-    height: 560px;
+    height: 675px;
     margin: 0px 30px 0px 0;
     background-size: cover;
+    box-shadow: 0 0 50px #333333;
 }
-
 
 /* Media quaries */
 
@@ -66,7 +67,7 @@
 /* Small Devices only */
 @media (min-width: 768px) and (max-width: 991px){
     .navbar-brand h2 {
-        font-size: 5vw;
+        font-size: 4vw;
     }
     #logo-img{
         background: url('../../assets/images/Feastmate_logo.PNG') no-repeat;
@@ -82,7 +83,6 @@
     .navbar-brand h2 {
         margin-left: 3px;
         font-size: 1.6em;
-        
     }
     #logo-img{
         width: 60px;

@@ -1,0 +1,29 @@
+.panel-footer{
+    margin-top: 30px;
+    padding-top: 35px;
+    padding-bottom: 30px;
+    background-color: #333333;
+    border-top: 0; 
+}
+.panel-footer div.row{
+    margin-bottom: 35px;
+}
+#address, #contacts{
+    line-height: 2;
+}
+#address > span, #social-media > span, #contacts > span{
+    font-size: 1.3em;
+} 
+
+/* Extra Small Devices only */
+@media (max-width: 767px) {
+    .panel-footer{
+        text-align: center;
+    }
+    .panel-footer section:nth-child(3){
+        margin-bottom: 0;
+    }
+    .panel-footer section hr{
+        width: 50%;
+    }
+}
