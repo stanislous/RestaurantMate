@@ -4,20 +4,71 @@
     text-align: center;
     text-decoration: underline;
 }
+.col-md-4{
+    padding-bottom: 12px;
+}
+.container-fluid{
+    box-sizing: border-box;
+    padding-right:60px;
+    padding-left:60px; 
 
+}
 .restaurantCard{
     box-sizing: border-box;
-    border: 1px black solid;
+    margin-top: 10px;
+    width:100%;
+}
+.restaurantCard h5{
+    padding: 0;
+    padding-top: 3px;
+    margin:0;
+    font-size: 15px;
+    font-weight: bold;
 }
 
+.restaurantCard p {
+    padding: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin:0;
+    font-size: 12px;
+}
 .restaurantDetails{
+    background: rgb(238, 149, 42, 0.2) ;
+    border: 1px black solid;
+    box-sizing: border-box;
+    float: right;
+    width: 70%;
     padding-left:5px;
     color:rgb(49, 46, 46);
 }
 
 .restaurant-image{
     float: left;
-    width: 50%;
-    height: 130px;
+    width: 30%;
+    height: 76px;
     background-size: cover; 
 }
+.myTable{
+    width:70%;
+}
+.myTable th{
+    font-size: 10px;
+    padding: 0;
+    padding-right: 2px;
+}
+
+.hvr-glow:hover, .hvr-glow:focus, .hvr-glow:active {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+.hvr-glow {
+    
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow;
+    transition-property: box-shadow;
+  }
