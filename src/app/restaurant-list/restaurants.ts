@@ -6,13 +6,13 @@ export interface IRestaurants {
     contactPerson: string;
     openTime: string;
     closeTime: string;
-    categories: string;
+    categories: any[];
     cusine: string;
-    coordinates: string;
+    coordinates: any[];
     distance: string;
     discounts: string;
     currency: string;
-    Address: string;
+    Address: any[];
     isDelivery: boolean;
     isTakeOut: boolean;
     country: string;
