@@ -36,6 +36,9 @@
 #navbar-list button{
     color: #ee952a;
 }
+.navbar-toggler{
+    border: 1px solid #ee952a;
+}
 /* Header-End */
 
 /* Background image */
@@ -62,6 +65,9 @@
 }
 /* Small Devices only */
 @media (min-width: 768px) and (max-width: 991px){
+    .navbar-brand h2 {
+        font-size: 5vw;
+    }
     #logo-img{
         background: url('../../assets/images/Feastmate_logo.PNG') no-repeat;
         width: 80px;
@@ -74,8 +80,8 @@
 @media (max-width: 767px) {
 
     .navbar-brand h2 {
-        margin-left: 17px;
-        font-size: 28px;
+        margin-left: 3px;
+        font-size: 1.6em;
         
     }
     #logo-img{
