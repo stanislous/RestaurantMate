@@ -1,0 +1,23 @@
+.heading{
+    margin-top: 10px;
+    color:rgb(49, 46, 46);
+    text-align: center;
+    text-decoration: underline;
+}
+
+.restaurantCard{
+    box-sizing: border-box;
+    border: 1px black solid;
+}
+
+.restaurantDetails{
+    padding-left:5px;
+    color:rgb(49, 46, 46);
+}
+
+.restaurant-image{
+    float: left;
+    width: 50%;
+    height: 130px;
+    background-size: cover; 
+}
