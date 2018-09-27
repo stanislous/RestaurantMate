@@ -1,5 +1,6 @@
 <div id="courses-list" class="container-fluid">
     <h1 id="heading" class="heading">Restaurant List</h1>
+    <hr>
     <div class="row">
         <div class="col-md-4 hvr-glow" *ngFor="let restaurant of restaurants">
             <a href="https://www.templaza.com/blog/best-free-css-hover-effects" target="_blank">
@@ -7,7 +8,7 @@
                     <img src="../../assets/images/restImage1.jpg" class="restaurant-image hvr-glow">
                     <div class="restaurantDetails hvr-glow">
                         <h5>{{ restaurant.resturantName }}</h5>
-                        <p>{{ restaurant.Address}}</p>
+                        <p>{{ restaurant.email}}</p>
                         <table id="cart-content" class="table table-borderless myTable">
                             <thead>
                                 <tr>

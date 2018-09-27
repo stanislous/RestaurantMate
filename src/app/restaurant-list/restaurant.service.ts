@@ -9,8 +9,6 @@ import { Observable } from '../../../node_modules/rxjs';
 export class DataService {
     private _productUrl = 'http://35.154.171.69:2020/api/resturants';
 
-    //http://35.154.171.69:2020/api/resturants
-
     constructor(private _http: HttpClient) { }
 
     getProducts(): Observable<IRestaurants[]> {
