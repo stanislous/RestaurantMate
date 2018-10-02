@@ -3,12 +3,12 @@
     <hr>
     <div class="row">
         <div class="col-md-4 hvr-glow" *ngFor="let restaurant of restaurants">
-            <a href="https://www.templaza.com/blog/best-free-css-hover-effects" target="_blank">
-                <div class="restaurantCard ">
+            <a href="#">
+                <div class="restaurantCard">
                     <img src="../../assets/images/restImage1.jpg" class="restaurant-image hvr-glow">
-                    <div class="restaurantDetails hvr-glow">
+                    <div class="ellipsis restaurantDetails hvr-glow" *ngIf="restaurant.resturantName; else noValue">
                         <h5>{{ restaurant.resturantName }}</h5>
-                        <p>{{ restaurant.email}}</p>
+                        <p>{{ restaurant.Address.address}}</p>
                         <table id="cart-content" class="table table-borderless myTable">
                             <thead>
                                 <tr>
@@ -18,12 +18,33 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <td>{{ restaurant.openTime}}</td>
-                                <td>{{ restaurant.distance}}</td>
+                                <td>{{ restaurant.openTime}} AM</td>
+                                <td *ngIf="restaurant.distance === 'Kms'; else Mi">{{ calculateDistance_km(restaurant.coordinates.lat, 17.687612500000007, restaurant.coordinates.lng, 83.24504296874997) }} Kms</td>
+                                <ng-template #Mi><td>{{ calculateDistance_mi(restaurant.coordinates.lat, 17.687612500000007, restaurant.coordinates.lng, 83.24504296874997)}} Miles</td></ng-template>
                                 <td>{{ restaurant.discounts}}</td>
                             </tbody>
                         </table>
                     </div>
+                    <ng-template #noValue>
+                        <div class="ellipsis restaurantDetails hvr-glow">
+                            <h5>No Name</h5>
+                            <p>No Address</p>
+                            <table id="cart-content" class="table table-borderless myTable">
+                                <thead>
+                                    <tr>
+                                        <th>Open</th>
+                                        <th>Distance</th>
+                                        <th>Discount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td>Not Defined</td>
+                                    <td>Not Defined</td>
+                                    <td>Not Defined</td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </ng-template>
                 </div>
             </a>
         </div>

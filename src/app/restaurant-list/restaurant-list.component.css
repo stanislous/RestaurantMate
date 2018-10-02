@@ -49,6 +49,14 @@
     color:rgb(49, 46, 46);
 }
 
+.ellipsis {
+    text-overflow: ellipsis;
+  
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
 .restaurant-image{
     float: left;
     width: 30%;
