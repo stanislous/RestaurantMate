@@ -1,14 +1,16 @@
+import { Time } from "@angular/common";
+
 export interface IRestaurants {
     resturantName: string;
     website: string;
     email: string;
     contactNumber: number;
     contactPerson: string;
-    openTime: string;
-    closeTime: string;
+    openTime: Time;
+    closeTime: Time;
     categories: any[];
     cusine: string;
-    coordinates: any[];
+    coordinates: {};
     distance: string;
     discounts: string;
     currency: string;

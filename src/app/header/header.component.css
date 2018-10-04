@@ -40,6 +40,22 @@
 .navbar-toggler{
     border: 1px solid #ee952a;
 }
+.search {
+     position: relative;
+}
+/* .search input { 
+    text-indent: 30px;
+} */
+.search .fa-search { 
+  position: absolute;
+  color: #8a8a81;
+  top: 12px;
+  right: 96px;
+  font-size: 18px;
+}
+
+
+
 /* Header-End */
 
 /* Background image */
@@ -61,13 +77,13 @@
 /* Medium Devices only */
 @media (min-width: 992px) and (max-width: 1199px){
     #search-bar{
-        width:230px;
+        width:228px;
     }
 }
 /* Small Devices only */
 @media (min-width: 768px) and (max-width: 991px){
     .navbar-brand h2 {
-        font-size: 4vw;
+        font-size: 4.3vw;
     }
     #logo-img{
         background: url('../../assets/images/Feastmate_logo.PNG') no-repeat;

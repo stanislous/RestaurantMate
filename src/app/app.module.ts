@@ -7,13 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { DataService } from './restaurant-list/restaurant.service';
 import { FooterComponent } from './footer/footer.component';
+import { CurrentLocationComponent } from './current-location/current-location.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RestaurantListComponent,
-    FooterComponent
+    FooterComponent,
+    CurrentLocationComponent
   ],
   imports: [
     BrowserModule,
