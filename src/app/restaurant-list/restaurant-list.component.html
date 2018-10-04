@@ -19,9 +19,14 @@
                             </thead>
                             <tbody>
                                 <td>{{ restaurant.openTime}} AM</td>
-                                <td *ngIf="restaurant.distance === 'Kms'; else Mi">{{ calculateDistance_km(restaurant.coordinates.lat, 17.687612500000007, restaurant.coordinates.lng, 83.24504296874997) }} Kms</td>
-                                <ng-template #Mi><td>{{ calculateDistance_mi(restaurant.coordinates.lat, 17.687612500000007, restaurant.coordinates.lng, 83.24504296874997)}} Miles</td></ng-template>
-                                <td>{{ restaurant.discounts}}</td>
+                                <td *ngIf="restaurant.distance === 'Kms'; else Mi">{{
+                                    calculateDistance_km(restaurant.coordinates.lat, getLatitude,
+                                    restaurant.coordinates.lng, getLongitude) }} Kms</td>
+                                <ng-template #Mi>
+                                    <td>{{ calculateDistance_mi(restaurant.coordinates.lat, getLatitude,
+                                        restaurant.coordinates.lng, getLongitude)}} Miles</td>
+                                </ng-template>
+                                <td *ngIf="restaurant.discounts">{{ restaurant.discounts }}%</td>
                             </tbody>
                         </table>
                     </div>
