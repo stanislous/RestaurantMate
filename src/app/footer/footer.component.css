@@ -14,7 +14,12 @@
 #address > span, #social-media > span, #contacts > span{
     font-size: 1.3em;
 } 
-
+.fa, .fab, .fal, .far, .fas{
+    color: #ffffff;
+}
+.fa:hover, .fab:hover, .fal:hover, .far:hover, .fas:hover{
+    color: #ee952a;
+}
 /* Extra Small Devices only */
 @media (max-width: 767px) {
     .panel-footer{

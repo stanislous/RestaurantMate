@@ -12,14 +12,14 @@ export class RestaurantListComponent implements OnInit {
   public restaurants: IRestaurants[];
   public getLatitude: number;
   public getLongitude: number;
-
+  
   constructor(private _dataService: DataService) {  }
 
   ngOnInit() {
     this.getLocation();
     this._dataService.getProducts()
       .subscribe(restaurants => this.restaurants = restaurants);
-      
+
   }
   a_km: number;
   dis_km: number;
@@ -39,9 +39,9 @@ export class RestaurantListComponent implements OnInit {
 
   getLocation(): void {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((pos)=>this.showPosition(pos));
+      navigator.geolocation.getCurrentPosition((pos) => this.showPosition(pos));
     } else {
-      //browser does not support geolocation
+      console.log("browser does not support geolocation");
     }
   }
 
