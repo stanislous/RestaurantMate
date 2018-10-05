@@ -1,15 +1,15 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor() { }
   @Output() sendFilterString: EventEmitter<string> = new EventEmitter<string>();
-  _filterString: string = 'me';
+  _filterString: string;
 
   get filterString(): string{
     return this._filterString;
@@ -17,22 +17,9 @@ export class HeaderComponent implements OnInit {
   set filterString(value: string){
     this._filterString = value;
 
-    if(this.filterString){
+    if((this.filterString) || (this.filterString === "") ){
       this.sendFilterString.emit(this.filterString);
-      // console.log(this.filterString);
     }
   }
-
-
-  ngOnInit() {
-    
-  }
-
-  // ngOnChanges(): void {
-  //   //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-  //   //Add '${implements OnChanges}' to the class.
-    
-  //   this.sendFilterString.emit(this.filterString);
-  // }
 
 }

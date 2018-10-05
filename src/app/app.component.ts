@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
 
-  _filterString : string = ' ';
+  _filterString : string;
   ngOnInit(): void {
     
   }

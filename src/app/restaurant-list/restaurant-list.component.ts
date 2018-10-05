@@ -16,19 +16,15 @@ export class RestaurantListComponent implements OnInit, OnChanges {
   @Input() _filterString: string;
   
   ngOnChanges(): void {
-    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    //Add '${implements OnChanges}' to the class.
     if(this.filteredRestaurants !== undefined){
       for (let restaurant of this.restaurants){
         if(restaurant.resturantName === undefined){
           restaurant.resturantName = "No Name";
-          restaurant.coordinates = 0;
         }
      }
       this.filteredRestaurants = this._filterString ? this.performFilter(this._filterString) : this.restaurants;
     }
 
-    console.log(this._filterString);
   }
   constructor(private _dataService: DataService) {  }
   ngOnInit() {
