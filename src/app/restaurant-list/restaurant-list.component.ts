@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { DataService } from '../restaurant-list/restaurant.service';
 import { IRestaurants } from '../restaurant-list/restaurants';
 
@@ -7,19 +7,38 @@ import { IRestaurants } from '../restaurant-list/restaurants';
   templateUrl: './restaurant-list.component.html',
   styleUrls: ['./restaurant-list.component.css']
 })
-export class RestaurantListComponent implements OnInit {
+export class RestaurantListComponent implements OnInit, OnChanges {
 
   public restaurants: IRestaurants[];
+  public filteredRestaurants : IRestaurants[];
   public getLatitude: number;
   public getLongitude: number;
+  @Input() _filterString: string;
+  
+  ngOnChanges(): void {
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+    if(this.filteredRestaurants !== undefined){
+      for (let restaurant of this.restaurants){
+        if(restaurant.resturantName === undefined){
+          restaurant.resturantName = "No Name";
+          restaurant.coordinates = 0;
+        }
+     }
+      this.filteredRestaurants = this._filterString ? this.performFilter(this._filterString) : this.restaurants;
+    }
 
+    console.log(this._filterString);
+  }
   constructor(private _dataService: DataService) {  }
-
   ngOnInit() {
     this.getLocation();
-    this._dataService.getProducts()
-      .subscribe(restaurants => this.restaurants = restaurants);
-      
+    this._dataService.getProducts().subscribe(
+      restaurants =>{
+        this.restaurants = restaurants;
+        this.filteredRestaurants = this.restaurants;        
+      }
+      ); 
   }
   a_km: number;
   dis_km: number;
@@ -46,9 +65,17 @@ export class RestaurantListComponent implements OnInit {
   }
 
   showPosition(position) {
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
-    this.getLatitude = latitude;
-    this.getLongitude = longitude;
+    this.getLatitude = position.coords.latitude;
+    this.getLongitude = position.coords.longitude;
+  }
+
+  addToFavourites($event){
+    console.log("clicked");
+  }
+
+  performFilter(filterBy: string): IRestaurants[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.restaurants.filter((restaurant: IRestaurants) =>
+    restaurant.resturantName.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 }
