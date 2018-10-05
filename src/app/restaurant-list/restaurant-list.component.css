@@ -38,7 +38,7 @@
     font-size: 15px;
 }
 .fav-btn:hover, .fav-btn:focus, .fav-btn:active {
-    color: crimson;
+    color: #f46651;
 }
 .restaurantCard p {
     padding: 0;
@@ -64,6 +64,15 @@
     white-space: nowrap;
     overflow: hidden;
   }
+/* 
+.fa-heart{
+    color: #f4f4e6;
+}
+
+.fa-heart::after{
+    color: #f46651;
+} */
+
 
 .restaurant-image{
     float: left;
