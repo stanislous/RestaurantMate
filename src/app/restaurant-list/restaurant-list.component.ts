@@ -13,7 +13,6 @@ export class RestaurantListComponent implements OnInit, OnChanges {
   public filteredRestaurants : IRestaurants[];
   public getLatitude: number;
   public getLongitude: number;
-<<<<<<< HEAD
   @Input() _filterString: string;
   
   ngOnChanges(): void {
@@ -31,24 +30,15 @@ export class RestaurantListComponent implements OnInit, OnChanges {
 
     console.log(this._filterString);
   }
-=======
-  
->>>>>>> 6303916a699ed820ebd19e57e164b59a96fbcf83
   constructor(private _dataService: DataService) {  }
   ngOnInit() {
     this.getLocation();
-<<<<<<< HEAD
     this._dataService.getProducts().subscribe(
       restaurants =>{
         this.restaurants = restaurants;
         this.filteredRestaurants = this.restaurants;        
       }
       ); 
-=======
-    this._dataService.getProducts()
-      .subscribe(restaurants => this.restaurants = restaurants);
-
->>>>>>> 6303916a699ed820ebd19e57e164b59a96fbcf83
   }
   a_km: number;
   dis_km: number;
